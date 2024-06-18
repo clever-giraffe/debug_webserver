@@ -1,0 +1,12 @@
+version: '3'
+services:
+  webserver:
+    build: .
+    ports:
+      - "8087:3000"
+    volumes:
+      - ./server.js:/app/server.js
+    environment:
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      TELEGRAM_CHAT_ID: ${TELEGRAM_CHAT_ID}
+    # command: "npm run dev" // for debug
